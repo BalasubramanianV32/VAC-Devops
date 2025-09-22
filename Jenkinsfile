@@ -10,20 +10,23 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                // For a static HTML/CSS/JS site, there's no real "build" step.
-                // We'll just archive the files as build artifacts.
-                echo 'No build needed for a static site. Archiving files...'
-                archiveArtifacts artifacts: '**/*', followSymlinks: false
+                // Builds the container using your Dockerfile
+                // and names it 'vac-devops-website'
+                sh 'docker build -t vac-devops-website .'
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy Container') {
             steps {
-                // This is a placeholder for your deployment step.
-                // You could add steps here to copy files to a web server.
-                echo 'Deployment stage is ready. Configure deployment steps here.'
+                // Stops and removes any old version of the container
+                sh 'docker stop vac-devops-website || true'
+                sh 'docker rm vac-devops-website || true'
+                
+                // Runs the new container
+                // Connects server port 8080 to the container's port 80
+                sh 'docker run -d --name vac-devops-website -p 8080:80 vac-devops-website'
             }
         }
     }
