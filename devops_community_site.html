@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Hub - Connect, Learn, Grow</title>
+</head>
+<body>
+    
+    <!-- Animated Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">DevOps Hub</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <button class="btn btn-secondary" onclick="openLoginModal()">Login</button>
+                <a href="#" class="btn btn-primary">Join Now</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Connect. Learn. Deploy.</h1>
+            <p>Join the most vibrant DevOps community where engineers, architects, and enthusiasts share knowledge, collaborate on projects, and accelerate their careers together.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary btn-hero" onclick="openLoginModal()">Get Started</button>
+                <a href="#features" class="btn btn-secondary btn-hero">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Choose DevOps Hub?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3>CI/CD Mastery</h3>
+                <p>Learn and share the latest in continuous integration and deployment practices with real-world examples and hands-on tutorials.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">☁️</span>
+                <h3>Cloud Architecture</h3>
+                <p>Dive deep into AWS, Azure, GCP, and hybrid cloud solutions with expert-led discussions and architecture reviews.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🐳</span>
+                <h3>Container Ecosystem</h3>
+                <p>Master Docker, Kubernetes, and container orchestration through collaborative projects and mentorship programs.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Monitoring & Observability</h3>
+                <p>Implement robust monitoring solutions with Prometheus, Grafana, and modern observability tools.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔧</span>
+                <h3>Infrastructure as Code</h3>
+                <p>Automate everything with Terraform, Ansible, and Pulumi through shared templates and best practices.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤝</span>
+                <h3>Career Growth</h3>
+                <p>Network with industry professionals, find mentors, and discover exciting career opportunities in DevOps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="login-modal">
+            <button class="close-modal" onclick="closeLoginModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back!</h2>
+                <p>Sign in to your DevOps Hub account</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Sign In</button>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
